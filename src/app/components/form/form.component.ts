@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class FormComponent implements OnInit {
 
   loginFormGroup!: FormGroup;
-  isLoggedIn!: false;
+  isLoggedIn = false;
 
   constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
 
@@ -30,6 +30,7 @@ export class FormComponent implements OnInit {
       return;
     }
 
+    this.isLoggedIn = true;
   }
 
 }
