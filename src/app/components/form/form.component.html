@@ -1,17 +1,16 @@
 <div class="container">
-
   <div class="col header">
     <h3 class="mt-3">Login Form</h3>
   </div>
-    <form class="form">
+    <form class="form" [formGroup]="loginFormGroup">
       <div class="col-md-4 w-100">
-          <input matInput placeholder="Username" required>
+          <input matInput placeholder="Username" formControlName="username" required>
       </div>
       <div class="col-md-4 w-100">
-          <input matInput placeholder="Email" required>
+          <input matInput placeholder="Email" formControlName="username" required>
       </div>
       <div class="col-md-4 w-100">
-          <input matInput placeholder="Password" required>
+          <input matInput placeholder="Password" formControlName="username" required>
       </div>
       <div class="col-md-4 w-100">
         <button class="submit">Submit</button>
