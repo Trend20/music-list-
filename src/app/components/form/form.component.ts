@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/user';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +14,7 @@ export class FormComponent implements OnInit {
   loginFormGroup!: FormGroup;
   isLoggedIn!: false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
 
@@ -20,6 +23,13 @@ export class FormComponent implements OnInit {
       email: ['', Validators.required],
       password: ['', Validators.required]
     })
+  }
+
+  login(){
+    if(this.loginFormGroup.invalid){
+      return;
+    }
+
   }
 
 }
